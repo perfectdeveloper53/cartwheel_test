@@ -1,0 +1,108 @@
+<div class="form-div full-width-sm">
+<!-- Card container that binds all togather -->  
+<mat-card>  
+    <!-- Title of an Card -->  
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title >  
+       Start your 14 day free trial
+    </mat-card-title>  
+  	No credit card required
+    <!-- Actual content starts from here -->  
+    <mat-card-content>  
+        <form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)"  class="mt-lg">   
+            <table>  
+                <tr  class="mt-lg">  
+                    <td>  
+                        <mat-form-field class="demo-full-width">  
+                            <input formControlName="FirstName" matInput placeholder="FIRST NAME">  
+                        </mat-form-field>  
+                        <mat-error>  
+                            <span *ngIf="!regiForm.get('FirstName').valid && regiForm.get('FirstName').touched">Please enter First Name</span>  
+                        </mat-error>  
+                    </td>  
+                    <td>  
+                        <mat-form-field class="demo-full-width">  
+                            <input formControlName="LastName" matInput placeholder="LAST NAME">  
+                        </mat-form-field>  
+                        <mat-error>  
+                            <span *ngIf="!regiForm.get('LastName').valid && regiForm.get('LastName').touched">Please enter Last Name</span>  
+                        </mat-error>  
+                    </td>  
+                </tr>  
+                <tr  class="mt-lg">  
+                    <td colspan="2">  
+                        <mat-form-field class="demo-full-width"> 
+                        	<input formControlName="CompanyName" matInput placeholder="COMPANY NAME"> 
+                        </mat-form-field>  
+                        <mat-error>  
+                            <span *ngIf="!regiForm.get('CompanyName').valid && regiForm.get('CompanyName').touched">Please enter Company name</span>  
+                        </mat-error>  
+                    </td>  
+                </tr>  
+                 <tr>  
+                    <td colspan="2">  
+                        <mat-form-field class="demo-full-width"> 
+                        	<input formControlName="Email" matInput placeholder="EMAIL"> 
+                        </mat-form-field>  
+                        <mat-error>  
+                            <span *ngIf="!regiForm.get('Email').valid && regiForm.get('Email').touched">Please enter Email</span>  
+                        </mat-error>  
+                    </td>  
+                </tr>  
+                
+               
+                <tr>  
+                    <td colspan="2">  
+                        <mat-form-field class="demo-full-width">  
+                            <input type="password" formControlName="Password" matInput placeholder="Password">  
+                            <mat-error>  
+                                <span *ngIf="!regiForm.get('Password').valid && regiForm.get('Password').touched">Enter proper Password !!!</span>  
+                            </mat-error>  
+                        </mat-form-field>  
+                    </td>  
+                </tr>  
+                 <tr>  
+                    <td colspan="2">  
+                        <mat-form-field class="demo-full-width">  
+                            <input type="password" formControlName="ConfirmPassword" matInput placeholder="Confirm Password">  
+                            <mat-error>  
+                                <span *ngIf="!regiForm.get('ConfirmPassword').valid && regiForm.get('ConfirmPassword').touched">Enter proper Confirm Password !!!</span>  
+                            </mat-error>  
+                        </mat-form-field>  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td colspan="2">  
+                        <mat-slide-toggle class="mt-md" formControlName="IsAccepted" (change)="onChange($event)">I agree to the terms of service</mat-slide-toggle>  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td colspan="2" class="content-center">  
+                        <button class="btn-signup"  mat-raised-button [disabled]="!regiForm.valid || IsAccepted==0">Sign Up</button>  
+                        <button type="button" class="ml-md"  mat-raised-button>Cancel</button>  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td></td>  
+                </tr>  
+            </table>  
+        </form>  
+    </mat-card-content>  
+</mat-card>  
+
+</div>
+
+<div class="picture-div full-width-sm">
+	<mat-card class="mat-img">  
+		<div class="img-container">
+			<img src="assets/images/bg.png" class="img-size">	
+			<div class="bottom-right">
+				<div class="svtime">Save Time</div>
+                <blockquote>
+                    With demo project,I've saved hundreds of hours that I used to waste on manual data entry.
+                    <div>HELEN JACKSON</div>
+                </blockquote>
+			</div>
+		</div>
+	</mat-card>
+</div>
